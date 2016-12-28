@@ -150,14 +150,14 @@ for x in "${FILETYPES[@]}"; do
  echo "Scanning for $x..."
  # FIXME: Eliminate problems with unusual characters in filenames.
  # Currently the exec call will fail and they will be skipped.
- find . -iname "$x" -print0 -exec sh -c "$0 doAction '{}'" \;
+ find ./ -iname "$x" -print0 -exec sh -c "$0 doAction '{}'" \;
  echo "... end of $x"
 done;
 # clean up empty directories. Find can do this easily.
 # Remove Thumbs.db first because of thumbnail caching
-echo -n "Removing Thumbs.db files ... "
-find . -name Thumbs.db -delete
-echo "done."
-echo -n "Cleaning up empty directories ... "
-find . -empty -delete
-echo "done."
+#echo -n "Removing Thumbs.db files ... "
+#find . -name Thumbs.db -delete
+#echo "done."
+#echo -n "Cleaning up empty directories ... "
+#find . -empty -delete
+#echo "done."
